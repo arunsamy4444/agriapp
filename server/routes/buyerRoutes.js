@@ -35,6 +35,7 @@ router.get('/getorder/:id', authMiddleware, async (req, res) => {
 // Place Order
 router.post('/placeorder', authMiddleware, async (req, res) => {
     const { product, quantity, address } = req.body;
+    console.log("Request Body:", req.body); // Debugging
     try {
         const order = new Order({
             product,
